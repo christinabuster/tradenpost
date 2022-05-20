@@ -6,8 +6,21 @@ class TradesController < ApplicationController
     @trades = Trade.all
   end
 
+  def goods
+    target_category = 'Goods'
+    target_expiration = Date.today
+    @trades = Trade.where("expiration >= ? AND category = ?", target_expiration, target_category)
+  end
+
+  def services
+    target_category = 'Services'
+    target_expiration = Date.today
+    @trades = Trade.where("expiration >= ? AND category = ?", target_expiration, target_category)
+  end
+
   # GET /trades/1 or /trades/1.json
   def show
+    @trades = Trade.find(params[:id])
   end
 
   # GET /trades/new
@@ -17,6 +30,7 @@ class TradesController < ApplicationController
 
   # GET /trades/1/edit
   def edit
+    @trade = Trade.find(params[:id])
   end
 
   # POST /trades or /trades.json

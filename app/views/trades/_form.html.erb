@@ -20,6 +20,7 @@
     <%= form.label :description, style: "display: block" %>
     <%= form.text_area :description %>
   </div>
+<!-- choose what type of post to make, offer goods or request services -->
 
   <div>
     <%= form.label :category, style: "display: block" %>
@@ -27,15 +28,16 @@
   </div>
 
   <div>
-    <%= form.label :expiration, style: "display: block" %>
-    <%= form.date_field :expiration %>
-  </div>
-
-  <div>
     <%= form.label :neighborhood, style: "display: block" %>
     <%= form.text_field :neighborhood %>
   </div>
 
+  <div>
+    <%= form.label :expiration, style: "display: block" %>
+    <%= form.date_field :expiration %>
+  </div>
+
+<!--
   <div>
     <%= form.label :user_id, style: "display: block" %>
     <%= form.number_field :user_id %>
@@ -65,7 +67,7 @@
     <%= form.label :image_updated_at, style: "display: block" %>
     <%= form.datetime_field :image_updated_at %>
   </div>
-
+-->
   <div>
     <%= form.submit %>
   </div>
