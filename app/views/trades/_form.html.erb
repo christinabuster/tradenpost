@@ -24,12 +24,7 @@
 
   <div>
     <%= form.label :category, style: "display: block" %>
-    <%= form.text_area :category %>
-  </div>
-
-  <div>
-    <%= form.label :category, style: "display: block" %>
-    <%= collection_select(:trade, :category_id, @categories, :id, :name, {:prompt => true}) %>
+    <%= collection_select(:trade, :category_id, @categories, :id, :category_name, {:prompt => true}) %>
   </div>
 
   <div>
