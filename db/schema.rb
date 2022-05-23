@@ -27,6 +27,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_05_23_054906) do
     t.string "category_id"
     t.date "expiration"
     t.string "neighborhood"
+    t.integer "user_id"
     t.text "interested_in"
     t.boolean "accept"
     t.string "image_file_name"

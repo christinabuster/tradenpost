@@ -3,7 +3,8 @@ class CreateTrades < ActiveRecord::Migration[7.0]
     create_table :trades do |t|
       t.string :product
       t.text :description
-      t.text :category
+      t.string :category_name
+      t.string :category_id
       t.date :expiration
       t.string :neighborhood
       t.integer :user_id
