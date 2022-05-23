@@ -21,16 +21,19 @@ class TradesController < ApplicationController
   # GET /trades/1 or /trades/1.json
   def show
     @trades = Trade.find(params[:id])
+    @categories = Category.all
   end
 
   # GET /trades/new
   def new
     @trade = Trade.new
+    @categories = Category.all
   end
 
   # GET /trades/1/edit
   def edit
     @trade = Trade.find(params[:id])
+    @categories = Category.all
   end
 
   # POST /trades or /trades.json
@@ -79,6 +82,6 @@ class TradesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def trade_params
-      params.require(:trade).permit(:product, :description, :category, :expiration, :neighborhood, :user_id, :interested_in, :accept, :image_file_name, :image_content_type, :image_updated_at)
+      params.require(:trade).permit(:product, :description, :category_name, :category_id, :expiration, :neighborhood, :user_id, :interested_in, :accept, :image_file_name, :image_content_type, :image_updated_at)
     end
 end
