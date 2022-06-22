@@ -7,12 +7,13 @@ class TradesController < ApplicationController
   end
 
   # GET /trades/1 or /trades/1.json
+  #create trade and category_name instance variables and assign each a category attribute
   def show
-    @trades = Trade.find(params[:id])
+    @trade = Trade.find(params[:id])
     @category_name = @trade.category.category_name
   end
 
-  # GET /trades/new
+  # GET /trades/new returns a new trade
   def new
     @trade = Trade.new
     @categories = Category.all
@@ -24,7 +25,7 @@ class TradesController < ApplicationController
     @categories = Category.all
   end
 
-  # POST /trades or /trades.json
+  # POST /trades or /trades.json return the trade object and save it to the database
   def create
     @trade = Trade.new(trade_params)
 
