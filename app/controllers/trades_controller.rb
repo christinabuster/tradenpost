@@ -7,7 +7,7 @@ class TradesController < ApplicationController
   end
 
   # GET /trades/1 or /trades/1.json
-  #create trade and category_name instance variables and and assign each a category attribute
+  #create trade and category_name instance variables and assign each a category attribute
   def show
     @trade = Trade.find(params[:id])
     @category_name = @trade.category.category_name
