@@ -20,8 +20,10 @@
     <%= form.label :description, style: "display: block" %>
     <%= form.text_area :description %>
   </div>
-<!-- choose what category your produce should be in  -->
 
+<!-- choose what category your produce should be in,-->
+<!-- :trade and :category_name look for the instance variables called @trade/ @cateogry_name in trades_controller -->
+<!-- @categories assigns the category selected to the new trade item -->
   <div>
     <%= form.label :category, style: "display: block" %>
     <%= collection_select(:trade, :category_id, @categories, :id, :category_name, {:prompt => true}) %>
